@@ -33,6 +33,16 @@ pnpm tsx agent/src/get-tokens.ts
 
 Curerently only OpenAI and OpenRouter are supported. Set the API key in the .env file.
 
+## Create your agent in the agent/src/index.ts file
+
+An agent requires a client, workflow, and pipeline. How the agent works:
+
+1. The client connects to the data source (e.g. Reddit)
+2. The client sends events to the agent
+3. The agent filters and transforms the events using the pipeline
+4. The agent passes the transformed/filtered events to the workflow
+5. The workflow executes the steps and stores the results in the context for each step
+
 ## Install dependencies
 
 ```sh
