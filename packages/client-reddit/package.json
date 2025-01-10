@@ -1,0 +1,33 @@
+{
+  "name": "@gentic/client-reddit",
+  "version": "0.1.0",
+  "private": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --target esnext",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "tsup src/index.ts --format esm --watch --dts",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@gentic/core": "workspace:*",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "open": "^10.1.0",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@gentic/core": "workspace:*",
+    "@gentic/eslint-config": "workspace:*",
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

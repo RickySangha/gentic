@@ -2,13 +2,19 @@
   "name": "gentic",
   "private": true,
   "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "test": "turbo run test",
+    "create-package": "node scripts/create-package.js",
+    "publish-packages": "turbo run build lint test && changeset publish"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
     "prettier": "^3.2.5",
+    "tsx": "^4.19.2",
     "turbo": "^2.3.3",
     "typescript": "5.5.4"
   },
